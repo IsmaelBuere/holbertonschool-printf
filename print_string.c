@@ -10,9 +10,18 @@ void print_string(va_list ap, unsigned int *num_char)
 {
 	char *string = va_arg(ap, char*);
 	int length = 0;
+	const char *chain = "(null)";
 
-	while (string[length] != '\0')
-		length++;
-	write(1, string, length);
-	*num_char += length;
+	if (string != NULL)
+	{
+		while (string[length] != '\0')
+			length++;
+		write(1, string, length);
+		*num_char += length;
+	}
+	else
+	{
+		write(1, chain, 6);
+		*num_char += 6;
+	}
 }
