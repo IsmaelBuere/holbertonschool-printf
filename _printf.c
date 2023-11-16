@@ -15,7 +15,8 @@ int _printf(const char *format, ...)
 {
 	va_list arguments;
 	unsigned int i, num_char = 0;
-	print_type types[] = {{"c", print_char}, {"s", print_string}, {NULL, NULL}};
+	print_type types[] = {{"c", print_char}, {"s", print_string},
+				{"d", print_int}, {"i", print_int}, {NULL, NULL}};
 
 	if (format == NULL)
 		return (-1);
@@ -26,29 +27,23 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			if (*format == '\0')
-			{
-				num_char--;
-				break;
-			}
-			i = 0;
-			while (types[i].type != NULL)
-			{
-				if (*format == *types[i].type)
-				{
-					types[i].f(arguments, &num_char);
-					break;
-				} i++;
-			}
+				return (-1);
 			if (*format == '%')
 				write(1, format, 1), num_char++;
-			if (*format != 'c' && *format != 's' && *format != '%')
-				write(1, format - 1, 2), num_char += 2;
+			else
+			{
+				i = 0;
+				while (types[i].type != NULL && *format != *types[i].type)
+					i++;
+				if (types[i].type != NULL)
+					types[i].f(arguments, &num_char);
+				else
+					write(1, format - 1, 2), num_char += 2;
+			}
 
 		}
 		else
-		{
 			write(1, format, 1), num_char++;
-		}
 		format++;
 	}
 	va_end(arguments);

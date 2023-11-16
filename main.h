@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <limits.h>
 
 
 /* Structure Definition */
@@ -24,10 +25,12 @@ typedef struct print
 } print_type;
 
 
-/* _printf functions */
+/* Functions */
 
+void reverse_array(char *a, int n);
 void print_char(va_list ap, unsigned int *num_char);
 void print_string(va_list ap, unsigned int *num_char);
+void print_int(va_list ap, unsigned int *num_char);
 int _printf(const char *format, ...);
 
 
