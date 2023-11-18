@@ -36,6 +36,7 @@ void print_uint(va_list ap, unsigned int *num_char);
 void print_oct(va_list ap, unsigned int *num_char);
 void print_hex(va_list ap, unsigned int *num_char);
 void print_hex_upper(va_list ap, unsigned int *num_char);
+void non_print_char(va_list ap, unsigned int *num_char);
 int _printf(const char *format, ...);
 
 
