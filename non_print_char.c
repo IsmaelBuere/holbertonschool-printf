@@ -29,9 +29,13 @@ void non_print_char(va_list ap, unsigned int *num_char)
 				{
 					_printf("%d", 0);
 					_printf("%X", string[i]);
+					*num_char += 2;
 				}
 				else
+				{
 					_printf("%X", string[i]);
+					*num_char += 2;
+				}
 			}
 			else
 			{
