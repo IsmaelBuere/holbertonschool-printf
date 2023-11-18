@@ -24,7 +24,10 @@ void print_hex(va_list ap, unsigned int *num_char)
 		number /= 16;
 		i++;
 	}
-	str[i] = number + '0';
+	if (number < 10)
+		str[i] = number + '0';
+	else
+		str[i] = number + 87;
 	num_of_digits = i + 1;
 	reverse_array(str, num_of_digits);
 	write(1, str, num_of_digits);
