@@ -11,5 +11,8 @@ void print_addr(va_list ap, unsigned int *num_char)
 {
 	void *addr = va_arg(ap, void *);
 
-	*num_char += _printf("0x") + _printf("%x", addr);
+	if (addr != NULL)
+		*num_char += _printf("0x") + _printf("%x", addr);
+	else
+		*num_char += _printf("(nil)");
 }
