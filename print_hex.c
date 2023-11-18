@@ -10,9 +10,9 @@
  */
 void print_hex(va_list ap, unsigned int *num_char)
 {
-	unsigned int number = va_arg(ap, unsigned int);
-	unsigned int num_of_digits, i = 0, rest;
-	char str[20];
+	unsigned long int number = va_arg(ap, unsigned long int), rest;
+	int num_of_digits, i = 0;
+	char str[30];
 
 	while (number >= 16)
 	{

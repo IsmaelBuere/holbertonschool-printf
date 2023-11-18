@@ -17,8 +17,9 @@ int _printf(const char *format, ...)
 	unsigned int i, num_char = 0;
 	print_type types[] = {{"c", print_char}, {"s", print_string},
 		{"d", print_int}, {"i", print_int}, {"b", print_bin},
-		{"u", print_uint}, {"o", print_oct}, {"x", print_hex},
-		{"X", print_hex_upper}, {"S", non_print_char}, {NULL, NULL}};
+		{"u", print_uint}, {"o", print_oct}, {"X", print_hex_upper},
+		{"x", print_hex}, {"S", non_print_char}, {"p", print_addr},
+		{NULL, NULL}};
 
 	if (format == NULL)
 		return (-1);
