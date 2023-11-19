@@ -41,7 +41,7 @@ int _printf(const char *format, ...)
 				if (types[i].type != NULL)
 					types[i].f(arguments, &num_char);
 				else
-					write(1, format - 1, 2), num_char += 2;
+					format = flags(format, arguments, &num_char);
 			}
 
 		}
