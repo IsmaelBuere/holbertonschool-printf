@@ -6,9 +6,9 @@
  *
  * Description: The output that this function produces is given by the format
  * character string. The format string is composed of zero or more directives.
- * It handles the following conversion specifiers: %c, %s, %d, %i, %b, %u, %o,
- * %x, %X, %S, %p.
- * It handle the following flag characters: +, space, #.
+ * It handles the following conversion specifiers: %c, %s, %%, %d, %i, %b, %u,
+ * %o, %x, %X, %S, %p.
+ * It handle the following flag characters: +, space, #, l, h.
  *
  * Return: An integer number representing the number of characters printed
  * (excluding the null byte used to end output to strings).
