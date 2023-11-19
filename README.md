@@ -37,6 +37,8 @@ in this project we are looking to create a function based on the printf from the
 	* "void print_hex_upper(va_list ap, unsigned int *num_char)" - This function prints an unsigned integer number converted to hexadecimal using uppercase.
 * **non_print_char.c:**
 	* "void non_print_char(va_list ap, unsigned int *num_char)" - Prints a string with a non printable characters.
+* **print_addr.c:**
+	* "void print_addr(va_list ap, unsigned int *num_char)" - This function prints the address of a pointer.
 
 
 ## Flowchart
@@ -53,7 +55,7 @@ in this project we are looking to create a function based on the printf from the
 |3 | *Advanced*        | Handle the following custom conversion: b:the unsigned int argument is converted to binary |
 |4 | *Advanced*        | Handle the following conversion in: u, o, x, X |
 |5 | *Advanced*        | Use a local buffer of 1024 chars in order to call write as little as possible. |
-|6 | *Advanced*        | not yet completed |
+|6 | *Advanced*        | Handle the following conversion specifier: p. |
 |7 | *Advanced*        | Handle the following custom conversion: S: print the string |
 
 ## Usage
@@ -84,6 +86,7 @@ int main()
 | `print_hex_upper`                      | `X`                                 | **print_hex_upper**. the function is used to print a number in a uppercase hexadecimal base|
 | `print_uint`                      | `u`                                 | **print_uint**. the function is used to print a unsigned integer|
 | `non_print_char`                      | `S` `\x`                                | **non_print_char**. handles non-printable characters: \x, followed by the ASCII code value in uppercase hexadecimal.|
+| `print_addr`                      | `p`                                 | **print_addr**. the function is used to print the adrres of a pointer |
 
 ## Authors
 
