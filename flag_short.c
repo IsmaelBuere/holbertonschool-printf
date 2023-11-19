@@ -12,13 +12,18 @@ const char *flag_short(const char *format, va_list ap, unsigned int *num_char)
 {
 	const char *ptr = format;
 
-	if (*(ptr + 1) == '\0')
+	ptr++;
+	if (*ptr == '\0')
 	{
 		*num_char = -1;
 		return (ptr);
 	}
-	ptr++;
-	if (*ptr == 'd' || *ptr == 'i')
+	else if	(*ptr == '\n')
+	{
+		write(1, "%\n", 2);
+		*num_char += 2;
+	}
+	else if (*ptr == 'd' || *ptr == 'i')
 		print_short_int(ap, num_char);
 	else if (*ptr == 'u')
 		print_uint(ap, num_char);
