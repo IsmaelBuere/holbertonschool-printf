@@ -16,21 +16,28 @@ const char *flag_space(const char *format, va_list ap, unsigned int *num_char)
 
 	va_copy(copy, ap);
 	number = va_arg(copy, int);
-	if (number >= 0)
+	if (*(ptr + 1) == '\0')
+	{
+		*num_char = -1;
+		return (ptr);
+	}
+	if (number >= 0 && *(ptr - 1) != '+' && *(ptr + 1) != '%')
 	{
 		write(1, " ", 1);
 		(*num_char)++;
 	}
 	ptr++;
-	if (*ptr == '\0')
+	if (*ptr == '%')
 	{
-		write(1, " ", 1);
+		write(1, "%", 1);
 		(*num_char)++;
 	}
 	else if (*ptr == 'd' || *ptr == 'i')
 	{
 		print_int(ap, num_char);
 	}
+	else if (*ptr == '+')
+		ptr = flag_sum(ptr, ap, num_char);
 	else
 	{
 		write(1, ptr - 1, 2);

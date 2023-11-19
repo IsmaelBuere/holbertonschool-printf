@@ -31,6 +31,8 @@ const char *flag_sum(const char *format, va_list ap, unsigned int *num_char)
 	{
 		print_int(ap, num_char);
 	}
+	else if (*ptr == ' ')
+		ptr = flag_space(ptr, ap, num_char);
 	else
 	{
 		write(1, ptr - 1, 2);
