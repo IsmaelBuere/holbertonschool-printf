@@ -17,7 +17,8 @@ const char *flags(const char *format, va_list ap, unsigned int *num_char)
 	const char *ptr = format;
 	unsigned int i;
 	Flags flag[] = {{"+", flag_sum}, {" ", flag_space}, {"#", flag_hash},
-		{"l", flag_long}, {"h", flag_short}, {NULL, NULL}};
+		{"l", flag_long}, {"h", flag_short}, {"6", flag_width},
+		{"*", flag_width}, {NULL, NULL}};
 
 	/*(void) ap;*/
 	if (ptr == NULL || *ptr == '\0')

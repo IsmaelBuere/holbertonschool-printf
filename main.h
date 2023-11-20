@@ -65,5 +65,16 @@ void print_long_uint(va_list ap, unsigned int *num_char);
 void print_long_oct(va_list ap, unsigned int *num_char);
 void print_long_hex(va_list ap, unsigned int *num_char);
 void print_long_hex_upper(va_list ap, unsigned int *num_char);
+const char *flag_width(const char *format, va_list ap, unsigned int *num_char);
+const char *print_width_int(const char *format, va_list ap,
+		unsigned int *num_char);
+unsigned int count_Digits(unsigned int num);
+const char *print_width_uint(const char *format, va_list ap,
+		unsigned int *num_char);
+const char *print_width_oct(const char *format, va_list ap,
+		unsigned int *num_char);
+const char *print_width_hex(const char *format, va_list ap,
+		unsigned int *num_char);
+
 
 #endif
