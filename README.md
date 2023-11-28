@@ -4,7 +4,7 @@
 
 ## Description
 
-in this project we are looking to create a function based on the printf from the <stdio.h> library that fulfills the same functions and requirements as the original one
+In this project we are looking to create a function based on the printf from the <stdio.h> library that fulfills the same functions and requirements as the original one.
 
 ## Compilation
 
@@ -43,20 +43,23 @@ in this project we are looking to create a function based on the printf from the
 
 ## Flowchart
 <p>
-<img width="1000" height="1400" src="https://i.imgur.com/w2gLYuM.jpeg">
+<img width="1000" height="1400" src="https://i.imgur.com/LoBzqH2.png">
 </p>
 
 ## Completed projects
 | Task # | Type | Short description |
 | ---: | --- | --- |
-|0 | **Mandatory**     | Write a function that produces output according to a format. |
+|0 | **Mandatory**     | It handle the conversion specifiers: c, s and %. |
 |1 | **Mandatory**     | Handle the following conversion specifiers: `d` `i` |
 |2 | **Mandatory**     | Create a man page for your function.
-|3 | *Advanced*        | Handle the following custom conversion: b:the unsigned int argument is converted to binary |
+|3 | *Advanced*        | Handle the following custom conversion. b: the unsigned int argument is converted to binary |
 |4 | *Advanced*        | Handle the following conversion in: u, o, x, X |
 |5 | *Advanced*        | Use a local buffer of 1024 chars in order to call write as little as possible. |
 |6 | *Advanced*        | Handle the following conversion specifier: p. |
 |7 | *Advanced*        | Handle the following custom conversion: S: print the string |
+|8 | *Advanced*        | Handle the following flag characters for non-custom conversion specifiers: +, space, # |
+|9 | *Advanced*        | Handle the following length modifiers for non-custom conversion specifiers: l, h. Conversion specifiers to handle: d, i, u, o, x, X |
+
 
 ## Usage
 
@@ -67,8 +70,12 @@ You can use the function like this
 
 int main()
 {
-        _printf("something to print")
-        return;
+	char str[] = "Printing the number:";
+        int number = 1234;
+
+        _printf("%s %d\n", str, number);
+
+        return (0);
 }
 ```
 
@@ -78,15 +85,15 @@ int main()
 | :------------------             | :------------------                 | :---------------------------------------- |
 | `print_char`                    | `c`                                 | **print_char**.the function is used to display the character        |
 | `print_string`                  | `s`                                 | **print_string**.the function is used to display the string        |
-| `_print`                        | `d` `i`                             | **print_int**.the int argument is converted to signed decimal notation. |
-| `_print`                      | `%`                                 | **%**. No argument is converted |
+| `_printf`                        | `d` `i`                             | **print_int**.the int argument is converted to signed decimal notation. |
+| `_printf`                      | `%`                                 | **%**. No argument is converted |
 | `print_oct`                      | `o`                                 | **print_oct**. the function is used to print a number in octal|
 | `print_bin`                      | `b`                                 | **print_bin** the function is used to print a number in binary|
 | `print_hex`                      | `x`                                 | **print_hex**. the function is used to print a number in lowercase hexadecimal base|
 | `print_hex_upper`                      | `X`                                 | **print_hex_upper**. the function is used to print a number in a uppercase hexadecimal base|
 | `print_uint`                      | `u`                                 | **print_uint**. the function is used to print a unsigned integer|
 | `non_print_char`                      | `S` `\x`                                | **non_print_char**. handles non-printable characters: \x, followed by the ASCII code value in uppercase hexadecimal.|
-| `print_addr`                      | `p`                                 | **print_addr**. the function is used to print the adrres of a pointer |
+| `print_addr`                      | `p`                                 | **print_addr**. the function is used to print the address of a pointer |
 
 ## Authors
 
